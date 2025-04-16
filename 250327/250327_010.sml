@@ -11,9 +11,11 @@ such that 𝑆′ ⊆ 𝑆
 • powerSet nil = [[]] (do not care about type warning)
 *)
 
+fun insertAll(_:'a, nil)=nil
+    |insertAll(n:'a, x :: xs:'a list list ) = ([n] @ x ) :: insertAll(n,xs);
 
-fun powerSet (nil) = [nil]
-    | powerSet(x::xs:'a list) = powerSet(xs) @ [x];
+fun powerSet(nil) = [nil]
+| powerSet(x::xs) = powerSet(xs) @ insertAll(x,powerSet(xs));
 
 powerSet([1,2,3]);
 (*powerSet [#"a",#"c"]=[[], [#"c"], [#"a"], [#"a",#"c"]];
