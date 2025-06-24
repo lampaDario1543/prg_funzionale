@@ -1,8 +1,3 @@
-(*Malinverno Tommaso, Casari Simone
-253723
-252228
-*)
-
 fun getCols nil = nil
     |getCols (x::x1::x2::x3::x4::x5::x6::x7::x8::xs) =
         let val col = hd x :: hd x1:: hd x2:: hd x3:: hd x4:: hd x5:: hd x6::hd x7::hd x8::nil
